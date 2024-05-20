@@ -1,0 +1,68 @@
+#############################################
+#                                           #
+# code from IRVAE_public (Lee et al., 2022) #
+#                                           #
+#############################################
+
+logdir: 'results/SwissRoll/AE'
+logger: 
+  type: base
+  endwith: ['@']
+model:
+  arch: ae 
+  encoder:
+      arch: fc_vec
+      l_hidden: [256, 256, 256, 256, 256 ]
+      activation: ['elu', 'elu', 'elu', 'elu', 'elu', ]
+      out_activation: 'linear'
+  decoder:
+      arch: fc_vec
+      l_hidden: [256, 256, 256, 256, 256 ]
+      activation: ['elu', 'elu', 'elu', 'elu', 'elu', ]
+      out_activation: 'linear'
+  x_dim: 3
+  z_dim: 2
+data:
+  training:
+    dataset: SwissRoll              
+    root: dataset
+    batch_size: 1000
+    n_workers: 4
+    split: training
+    shuffle: True
+
+    N: 10000
+    uniform: False
+    hole: True
+    theta_range: [1.5, 4.0]                     # unit: pi radian
+    hole_range: [0.33, 0.67, 0.33, 0.67]        # relative scale of hole. [s0,sf,z0,zf]
+    
+    data_GT_distfunc: 'SwissRoll_geodesic'      # ground truth distance (for evaluation)
+
+  validation:
+    dataset: SwissRoll              
+    root: dataset
+    batch_size: 1000
+    n_workers: 4
+    split: validation
+    shuffle: True
+
+    N: 10000
+    uniform: False
+    hole: True
+    theta_range: [1.5, 4.0]
+    hole_range: [0.33, 0.67, 0.33, 0.67]
+    
+    data_GT_distfunc: 'SwissRoll_geodesic'
+    
+trainer: graph                      
+training:
+  n_epoch: 5000
+  optimizer:
+    name: 'adam'
+    lr: 0.0001
+  print_interval: 100
+  val_interval: 500
+  visualize_interval: 500
+  seed: 0
+  model_seed: 4

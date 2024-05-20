@@ -1,0 +1,69 @@
+#############################################
+#                                           #
+# code from IRVAE_public (Lee et al., 2022) #
+#                                           #
+#############################################
+
+logdir: 'results/dSprites/AE/'
+logger: 
+  type: base
+  endwith: ['@']
+model:
+  arch: ae
+  encoder:
+    arch: conv64
+    activation: 'relu'
+    out_activation: 'linear'
+  decoder:
+    arch: dconv64
+    activation: 'relu'
+    out_activation: 'linear'
+  x_dim: 1
+  z_dim: 3                
+data:
+  training:
+    dataset: dSprites              
+    root: dataset
+    batch_size: 100                 
+    n_workers: 4
+    split: training
+    shuffle: True
+
+    N: 3000
+    shape: 'square'
+    fix_scale: False  
+    fix_orientation: True  
+    XY_hole: True
+    XY_hole_range: [0.3, 0.7, 0.3, 0.7]
+
+    data_GT_distfunc: 'dSprites_latent'      # ground truth distance (for evaluation)
+    
+  validation:
+    dataset: dSprites             
+    root: dataset
+    batch_size: 100       
+    n_workers: 4
+    split: validation
+    shuffle: True
+
+    N: 3000
+    shape: 'square'
+    fix_scale: False  
+    fix_orientation: True  
+    XY_hole: True
+    XY_hole_range: [0.3, 0.7, 0.3, 0.7]
+
+    data_GT_distfunc: 'dSprites_latent'
+    
+
+trainer: graph                      
+training:
+  n_epoch: 3000                       
+  optimizer:
+    name: 'adam'
+    lr: 0.0001
+  print_interval: 100
+  val_interval: 500
+  visualize_interval: 500
+  seed: 0
+  model_seed: 0
