@@ -1,7 +1,7 @@
 # Graph Geometry-Preserving Autoencoders
 The official repository for \<Graph Geometry-Preserving Autoencoders\> (Lim, Kim, Lee, Jang, and Park, ICML 2024)
 
-> This paper proposes Graph Geometry-Preserving Autoencoder (GGAE), a regularized autoencoder trained by minimizing the *reconstruction error + distortion measure of graph geometry* It produces latent representation that preserves shortest-path distances along a graph connecting data points by semantic distances or similarity.
+> This paper proposes Graph Geometry-Preserving Autoencoder (GGAE), a regularized autoencoder trained by minimizing the *reconstruction error + distortion measure of graph geometry*. It produces latent representation that preserves shortest-path distances along a graph connecting data points by semantic distances or similarity.
 
 
 ## Preview
@@ -12,7 +12,7 @@ The official repository for \<Graph Geometry-Preserving Autoencoders\> (Lim, Kim
 <span style="width: 31.8%"><img src="./figure/swissroll_ae.png" width="250 height="190"/> </span>
 <span style="width: 31.8%"><img src="./figure/swissroll_ggae.png" width="250 height="190"/> </span>
 </div>
-  <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by IRVAE. </I>
+  <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by GGAE. </I>
 </center>
 <br>
 
@@ -23,7 +23,7 @@ The official repository for \<Graph Geometry-Preserving Autoencoders\> (Lim, Kim
 <span style="width: 31.8%"><img src="./figure/rotatingmnist_ae.png" width="250 height="190"/> </span>
 <span style="width: 31.8%"><img src="./figure/rotatingmnist_ggae.png" width="250 height="190"/> </span>
 </div>
-  <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by IRVAE. </I>
+  <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by GGAE. </I>
 </center>
 <br>
 
@@ -34,7 +34,7 @@ The official repository for \<Graph Geometry-Preserving Autoencoders\> (Lim, Kim
 <span style="width: 31.8%"><img src="./figure/dsprites_ae.png" width="250 height="190"/> </span>
 <span style="width: 31.8%"><img src="./figure/dsprites_ggae.png" width="250 height="190"/> </span>
 </div>
-  <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by IRVAE. </I>
+  <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by GGAE. </I>
 </center>
 <br>
 
