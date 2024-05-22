@@ -8,9 +8,9 @@ The official repository for \<Graph Geometry-Preserving Autoencoders\> (Lim, Kim
 ### 1. Swiss Roll
 <center>
 <div class="imgCollage">
-<span style="width: 31.8%"><img src="./figure/swissroll_ideal.png" width="250 height="190"/></span>
-<span style="width: 31.8%"><img src="./figure/swissroll_ae.png" width="250 height="190"/> </span>
-<span style="width: 31.8%"><img src="./figure/swissroll_ggae.png" width="250 height="190"/> </span>
+<span style="width: 31.8%"><img src="./figure/swissroll_ideal.png" width="250" height="250"/></span>
+<span style="width: 31.8%"><img src="./figure/swissroll_ae.png" width="250" height="250"/> </span>
+<span style="width: 31.8%"><img src="./figure/swissroll_ggae.png" width="250" height="250"/> </span>
 </div>
   <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by GGAE. </I>
 </center>
@@ -19,9 +19,9 @@ The official repository for \<Graph Geometry-Preserving Autoencoders\> (Lim, Kim
 ### 2. Rotating MNIST
 <center>
 <div class="imgCollage">
-<span style="width: 31.8%"><img src="./figure/rotatingmnist_ideal.png" width="250 height="190"/></span>
-<span style="width: 31.8%"><img src="./figure/rotatingmnist_ae.png" width="250 height="190"/> </span>
-<span style="width: 31.8%"><img src="./figure/rotatingmnist_ggae.png" width="250 height="190"/> </span>
+<span style="width: 31.8%"><img src="./figure/rotatingmnist_ideal.png" width="250" height="250"/></span>
+<span style="width: 31.8%"><img src="./figure/rotatingmnist_ae.png" width="250" height="250"/> </span>
+<span style="width: 31.8%"><img src="./figure/rotatingmnist_ggae.png" width="250" height="250"/> </span>
 </div>
   <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by GGAE. </I>
 </center>
@@ -30,9 +30,9 @@ The official repository for \<Graph Geometry-Preserving Autoencoders\> (Lim, Kim
 ### 3. dSprites
 <center>
 <div class="imgCollage">
-<span style="width: 31.8%"><img src="./figure/dsprites_ideal.png" width="250 height="190"/></span>
-<span style="width: 31.8%"><img src="./figure/dsprites_ae.png" width="250 height="190"/> </span>
-<span style="width: 31.8%"><img src="./figure/dsprites_ggae.png" width="250 height="190"/> </span>
+<span style="width: 31.8%"><img src="./figure/dsprites_ideal.png" width="250" height="250"/></span>
+<span style="width: 31.8%"><img src="./figure/dsprites_ae.png" width="250" height="250"/> </span>
+<span style="width: 31.8%"><img src="./figure/dsprites_ggae.png" width="250" height="250"/> </span>
 </div>
   <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by GGAE. </I>
 </center>
