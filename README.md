@@ -50,3 +50,13 @@ The project is developed under a standard PyTorch environment.
 - omegaconf
 - tensorboardX
 - torch 1.13.1
+
+## Citation
+If you found this library useful in your research, please consider citing:
+```
+@inproceedings{limgraph,
+  title={Graph Geometry-Preserving Autoencoders},
+  author={Lim, Jungbin and Kim, Jihwan and Lee, Yonghyeon and Jang, Cheongjae and Park, Frank C},
+  booktitle={Forty-first International Conference on Machine Learning}
+}
+```
