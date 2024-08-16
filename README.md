@@ -12,7 +12,7 @@ The official repository for \<Graph Geometry-Preserving Autoencoders\> (Lim, Kim
 <span style="width: 31.8%"><img src="./figure/swissroll_ae.png" width="250" height="250"/> </span>
 <span style="width: 31.8%"><img src="./figure/swissroll_ggae.png" width="250" height="250"/> </span>
 </div>
-  <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by GGAE. </I>
+  <I>Figure 1: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by GGAE. </I>
 </center>
 <br>
 
@@ -34,7 +34,7 @@ The official repository for \<Graph Geometry-Preserving Autoencoders\> (Lim, Kim
 <span style="width: 31.8%"><img src="./figure/dsprites_ae.png" width="250" height="250"/> </span>
 <span style="width: 31.8%"><img src="./figure/dsprites_ggae.png" width="250" height="250"/> </span>
 </div>
-  <I>Figure 2: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by GGAE. </I>
+  <I>Figure 3: <b>(Left)</b> An ideal latent representation, <b>(Middle)</b> distorted representation obtained by AE, and <b>(Right)</b> graph geometry-preserving representation obtained by GGAE. </I>
 </center>
 <br>
 
