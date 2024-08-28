@@ -78,7 +78,7 @@ def run(cfg, writer):
     d_dataloaders = {}
     for key, dataloader_cfg in cfg.data.items():
         # d_dataloaders[key] = get_dataloader(dataloader_cfg)               # original version with no collate_fn
-        loader_device = dataloader_cfg.get('collate_device', 'cuda:0')
+        loader_device = device
         print(f"{key} split, loader_device = {loader_device}")
         d_dataloaders[key] = get_dataloader(data_dict=dataloader_cfg, loader_device=loader_device)
     

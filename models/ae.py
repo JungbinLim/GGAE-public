@@ -281,6 +281,9 @@ class TIMESERIES_AE(AE):
         
             x: (B, T, *dims)
         '''
+        
+        print("Timeseries AE train_step, x.shape", x.shape)
+        
         optimizer.zero_grad()
         
         recon = self(x)

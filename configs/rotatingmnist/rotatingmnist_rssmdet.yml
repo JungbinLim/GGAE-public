@@ -1,0 +1,78 @@
+#############################################
+#                                           #
+# code from IRVAE_public (Lee et al., 2022) #
+#                                           #
+#############################################
+
+logdir: 'results_dl/RotatingMNIST/RSSM_det'
+logger: 
+  type: base
+  endwith: ['@']
+model:
+  arch: rssm_det
+  encoder:
+    arch: fc_image
+    l_hidden: [256, 256, 256, 256, ]
+    activation: ['relu', 'relu', 'relu', 'relu', ]
+    out_activation: 'linear'
+    img_size: [1, 28, 28]
+    out_chan_num: 1
+  decoder:
+    arch: fc_image
+    l_hidden: [256, 256, 256, 256, ]
+    activation: ['relu', 'relu', 'relu', 'relu', ]
+    out_activation: 'sigmoid'
+    img_size: [1, 28, 28]
+    out_chan_num: 1
+  o_dim: 784
+  lstate_dim: 2
+  hidden_dim: 200
+  hstate_dim: 200
+  activation: 'relu'
+  iso_reg: 0.0
+  measure: 'isometry'
+
+data:
+  training:
+    dataset: RotatingMNIST              
+    root: dataset
+    batch_size: 10                        # number of time series in batch
+    n_workers: 4
+    split: training
+    shuffle: True
+
+    digits: [3]
+    time_horizon: 36                      # number of images in a series
+
+    collate_fn: 'timeseries_dl_laplacian_collate_fn' 
+    collate_device: 'cuda:0'
+    precompute_global_dist: False
+    data_GT_distfunc: 'TimeSteps'
+  
+  validation:
+    dataset: RotatingMNIST               
+    root: dataset
+    batch_size: 10
+    n_workers: 4
+    split: validation
+    shuffle: True
+
+    digits: [3]
+    time_horizon: 36                      # number of images in a series
+
+    collate_fn: 'timeseries_dl_laplacian_collate_fn' 
+    collate_device: 'cuda:0'
+    precompute_global_dist: False
+    data_GT_distfunc: 'TimeSteps'
+
+trainer: graph                      
+training:
+  n_epoch: 100
+  optimizer:
+    name: 'adam'
+    lr: 0.0001
+  print_interval: 100
+  val_interval: 500
+  visualize_interval: 500
+  seed: 0
+  model_seed: 0
