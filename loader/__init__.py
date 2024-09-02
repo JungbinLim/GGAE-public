@@ -6,7 +6,7 @@
 
 from torch.utils import data
 
-from loader.MNIST_dataset import MNIST, RotatingMNIST, TranslatingMNIST
+from loader.MNIST_dataset import MNIST, RotatingMNIST
 from loader.Synthetic_dataset import SwissRoll
 from loader.dSprites_dataset import dSprites
 
@@ -49,8 +49,6 @@ def get_dataset(data_dict, **kwargs):
         dataset = MNIST(**data_dict, **kwargs)
     elif name == 'RotatingMNIST':
         dataset = RotatingMNIST(**data_dict, **kwargs)
-    elif name == 'TranslatingMNIST':
-        dataset = TranslatingMNIST(**data_dict, **kwargs)
     elif name == 'SwissRoll':
         dataset = SwissRoll(**data_dict, **kwargs)
     elif name == 'dSprites':
@@ -66,8 +64,6 @@ def get_collate_fn(data_dict, device, **kwargs):
         collate_fn = Laplacian_collate_fn(data_dict, device, **kwargs)
     elif name == 'timeseries_collate_fn':                                               # for TS_AE
         collate_fn = TimeSeries_collate_fn(data_dict, device, **kwargs)
-    elif name == 'timeserie_dl_collate_fn':                                             # for RSSMs
-        collate_fn = TimeSeries_dl_collate_fn(data_dict, device, **kwargs)
     elif name == 'timeseries_laplacian_collate_fn':                                     # for TS_ERAE
         collate_fn = TimeSeries_Laplacian_collate_fn(data_dict, device, **kwargs)
     else:

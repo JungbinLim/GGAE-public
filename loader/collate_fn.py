@@ -70,46 +70,14 @@ class TimeSeries_collate_fn(object):
             idx_list.append(_idx)
 
         device = self.device
-        X = torch.stack(data_list).to(device)               # [B, *dims, T]
-        Y = torch.stack(label_list).to(device)              # [B] or [B, d, T]
-        idx = torch.tensor(idx_list).to(device)             # [B]
+        X = torch.stack(data_list).to(device)               # [batch_size, *dims, T]
+        Y = torch.stack(label_list).to(device)              # [batch_size] or [batch_size, d, T]
+        idx = torch.tensor(idx_list).to(device)              # [batch_size]
         
         X = X.unsqueeze(1).transpose(1,-1).squeeze(-1)      # (B,T,*dims)
         T = X.shape[1]
         if len(Y.shape) == 1:
-            Y = Y.repeat_interleave(T).view(len(batch),T)   # (B,T)
-        else:
-            Y = Y.transpose(1, 2)
-        
-        return X, Y, idx
-    
-class TimeSeries_dl_collate_fn(object):
-    def __init__(self, data_dict, device, **kwargs):
-        self.device = device
-    
-    def __call__(self, batch):
-        # ------ inputs ------
-        # batch = B tuples of (x, y)
-        
-        # ------ outputs ------
-        # X: (B,*dims,T)   (dims=[C,W,H] for img data)
-        # Y: (B,T)
-        # L: (B,T,T)      (Laplacian of all the data points in the batch)
-        
-        data_list, label_list, idx_list = [], [], []
-        for _data, _label, _idx in batch:      # _idx added in __getitem__() of dataset class
-            data_list.append(_data)
-            label_list.append(_label)
-            idx_list.append(_idx)
-
-        device = self.device
-        X = torch.stack(data_list).to(device)               # [B, *dims, T]
-        Y = torch.stack(label_list).to(device)              # [B] or [B, d, T]
-        idx = torch.tensor(idx_list).to(device)             # [B]
-        
-        T = X.shape[-1]
-        if len(Y.shape) == 1:
-            Y = Y.repeat_interleave(T).view(len(batch),T)   # (B,T)
+            Y = Y.repeat_interleave(T).view(len(batch),T)       # (B,T)
         else:
             Y = Y.transpose(1, 2)
         
