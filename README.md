@@ -53,9 +53,9 @@ The project is developed under a standard PyTorch environment.
 
 ## Preparing the Datasets
 ### Rotating MNIST
-Run ./notebook/01_RotatingMNIST_dataset_generation.ipynb.
+Run `./notebook/01_RotatingMNIST_dataset_generation.ipynb`.
 ### dSprites
-Run ./notebook/02_dSprites_dataset_generation.ipynb.
+Run `./notebook/02_dSprites_dataset_generation.ipynb`.
 
 ## Running
 ### 1. Train
