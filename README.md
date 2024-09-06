@@ -51,6 +51,33 @@ The project is developed under a standard PyTorch environment.
 - tensorboardX
 - torch 1.13.1
 
+## Preparing the Datasets
+### Rotating MNIST
+Run ./notebook/01_RotatingMNIST_dataset_generation.ipynb.
+### dSprites
+Run ./notebook/02_dSprites_dataset_generation.ipynb.
+
+## Running
+### 1. Train
+#### 1.1 AE
+```js
+python train.py --config configs/swissroll/swissroll_ae_z2.yml
+python train.py --config configs/rotatingmnist/rotatingmnist_ae_z2.yml
+python train.py --config configs/dsprites/dsprites_ae_z3.yml
+```
+#### 1.2 GGAE
+```js
+python train.py --config configs/swissroll/swissroll_ggae_z2.yml
+python train.py --config configs/rotatingmnist/rotatingmnist_ggae_z2.yml
+python train.py --config configs/dsprites/dsprites_ggae_z3.yml
+```
+- The results will be saved in './results' directory.
+
+### 2. Tensorboard 
+```js
+tensorboard --logdir results/
+```
+
 ## Citation
 If you found this library useful in your research, please consider citing:
 ```
